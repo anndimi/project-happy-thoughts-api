@@ -14,17 +14,12 @@ const port = process.env.PORT || 8080;
 const app = express();
 
 const ThoughtSchema = new mongoose.Schema({
-  // name: {
-  //   type: String,
-  //   required: false,
-  // },
   message: {
     type: String,
     required: true,
     unique: true,
     minlength: 5,
     maxlength: 140,
-    // enum: ["Shower Thoughts", "Random Thoughts"],
   },
   hearts: {
     type: Number,
