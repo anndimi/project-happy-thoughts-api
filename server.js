@@ -45,7 +45,7 @@ app.use(express.json());
 // Start defining your routes here
 app.get("/thoughts", async (req, res) => {
   const thoughts = await Thought.find()
-    .sort({ createdAt: "asc" })
+    .sort({ createdAt: "desc" })
     .limit(20)
     .exec();
   res.json(thoughts);
